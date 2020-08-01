@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+<form action="/calculate">
+    <label for="valueu">Miejsce do wpisania wartości:</label>
+    <input type="text" name="inputValue" id="valueu"><br>
+    <button>Send</button>
+
+</form>
+
+<p th:text="${result}"></p>
+</body>
+</html>
