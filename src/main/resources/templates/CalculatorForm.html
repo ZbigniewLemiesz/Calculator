@@ -5,13 +5,27 @@
     <title>Calculator</title>
 </head>
 <body>
-<form action="/calculate">
-    <label for="valueu">Miejsce do wpisania wartości:</label>
-    <input type="text" name="inputValue" id="valueu"><br>
-    <button>Send</button>
 
-</form>
+<h1>Kalkulator</h1>
+<section>
+    <p>Kalkulator obsługuje nastepujące operacje na liczbach całkowitych : + , - , *, /.</p>
+    <form action="/calculate">
+        <label for="valueu">Wpisz wyrażenie np. 2 + 2</label>
+        <input type="text" name="inputValue" id="valueu">
+        <button>Oblicz</button>
+    </form>
+</section>
 
-<p th:text="${result}"></p>
+<section>
+    <table th:if="${result}" >
+        <tr >
+            <td>Rezultat:</td>
+            <td th:text="${inputValue}"></td>
+            <td> = </td>
+            <td th:text="${result}"></td>
+        </tr>
+    </table>
+
+</section>
 </body>
 </html>
