@@ -10,8 +10,8 @@
 <section>
     <p>Kalkulator obsługuje nastepujące operacje na liczbach całkowitych : + , - , *, /.</p>
     <form action="/calculate">
-        <label for="valueu">Wpisz wyrażenie np. 2 + 2</label>
-        <input type="text" name="inputValue" id="valueu">
+        <label for="value">Wpisz wyrażenie np. 2 + 2</label>
+        <input type="text" name="inputValue" id="value">
         <button>Oblicz</button>
     </form>
 </section>
@@ -25,6 +25,13 @@
             <td th:text="${result}"></td>
         </tr>
     </table>
+
+</section>
+<p>Kalkulator może wyświetlić wykonane obliczenia</p>
+<form action="/list">
+    <button>Wyświetl</button>
+</form>
+<section>
 
 </section>
 </body>

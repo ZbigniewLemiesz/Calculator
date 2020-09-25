@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculator</title>
+</head>
+<body>
+
+<h1>Lista wykonanych obliczeń</h1>
+
+<section>
+    <table th:if="${operationsList}" border="1px">
+        <tr >
+            <th>Id</th>
+            <th> Wprowadzone wyrażenie</th>
+            <th> Rezultat </th>
+        </tr>
+        <tr th:each="operation :${operationsList}">
+            <td th:text="${operation.getId()}"></td>
+            <td th:text="${operation.getInputValue()}"></td>
+            <td th:text="${operation.getResult()}"></td>
+        </tr>
+    </table>
+
+</section>
+    <form action="/calculator">
+        <button>Powrót</button>
+    </form>
+<section>
+
+</section>
+</body>
+</html>

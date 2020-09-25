@@ -10,7 +10,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class CalculatorService {
+public class
+
+CalculatorService {
 
     BiFunction<Integer, Integer, BigDecimal> adder = (a, b) -> BigDecimal.valueOf(a + b);
     BiFunction<Integer, Integer, BigDecimal> subtractor = (a, b) -> BigDecimal.valueOf(a - b);
@@ -29,18 +31,16 @@ public class CalculatorService {
     }
 
     BigDecimal calculate(String input) {
-        Pattern pattern = Pattern.compile("^([0-9\\s]+)([+-\\/*])([0-9\\s]+)$");
+        Pattern pattern = Pattern.compile("^([0-9\\s]+)([+-/*])([0-9\\s]+)$");
         Matcher matcher = pattern.matcher(input);
         if (matcher.matches()) {
-            String all = matcher.group(0);
+//            String all = matcher.group(0);
             String firstNumber = matcher.group(1).trim();
             String sign = matcher.group(2);
             String secondNumber = matcher.group(3).trim();
             Integer number1 = Integer.valueOf(firstNumber);
             Integer number2 = Integer.valueOf(secondNumber);
-            BigDecimal result = functionMap.get(sign).apply(number1, number2);
-            return result;
-
+            return functionMap.get(sign).apply(number1, number2);
         }
         return BigDecimal.ZERO;
     }
