@@ -23,7 +23,7 @@ public class OperationService {
     public List<OperationDTO> findOperations(){
         return operationRepository.findAll().
                 stream().
-                map(e->OperationDTO.fromOperation(e)).
+                map(OperationDTO::fromOperation).
                 collect(Collectors.toList());
     }
 
