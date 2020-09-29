@@ -1,5 +1,6 @@
 package pl.sda.springdemo;
 
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -10,9 +11,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Service
-public class
-
-CalculatorService {
+@NoArgsConstructor
+public class CalculatorService {
 
     BiFunction<Integer, Integer, BigDecimal> adder = (a, b) -> BigDecimal.valueOf(a + b);
     BiFunction<Integer, Integer, BigDecimal> subtractor = (a, b) -> BigDecimal.valueOf(a - b);

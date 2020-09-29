@@ -22,7 +22,7 @@ public class CalculatorController {
     }
 
     @RequestMapping("/calculator")
-    String calculateForm() {
+    String homePage() {
         return "CalculatorForm";
     }
 
@@ -41,8 +41,6 @@ public class CalculatorController {
         model.addAttribute("operationsList", listOperations);
         return "ListOperationsForm";
     }
-
-
 
 
     @ResponseBody // tak oznaczona metoda może zwracać JSONa
